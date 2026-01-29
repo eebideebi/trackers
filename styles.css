@@ -9,7 +9,7 @@ div {
 
 p {
     text-align: center;
-    width: 500px;
+    width: 90%;
     text-wrap: inherit;
     margin: auto
 }
@@ -26,14 +26,14 @@ hr {
 }
 
 #osm-map {
-    height: 300px;
-    width: 300px;
+    height: 50vb;
+    width: 50vb;
     margin: 10px auto;
 }
 
 .interactive {
     background-color: burlywood;
-    width: 500px;
+    width: 90%;
     padding: 10px;
     border-radius: 7px;
     margin: auto;
@@ -41,4 +41,6 @@ hr {
 
 button {
     padding: 5px;
+    font-size: 16;
+    font-family: 'Lucida Console', monospace;
 }
