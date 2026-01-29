@@ -1,0 +1,44 @@
+html {
+    font-family: 'Lucida Console', monospace;
+}
+
+
+div {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    width: 500px;
+    text-wrap: inherit;
+    margin: auto
+}
+
+hr {
+    width: 75px;
+    margin: 25px auto;
+}
+
+#ip-address {
+    background-color: rgba(131, 131, 131, 0.171);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#osm-map {
+    height: 300px;
+    width: 300px;
+    margin: 10px auto;
+}
+
+.interactive {
+    background-color: burlywood;
+    width: 500px;
+    padding: 10px;
+    border-radius: 7px;
+    margin: auto;
+}
+
+button {
+    padding: 5px;
+}

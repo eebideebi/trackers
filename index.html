@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
+    <title>Trackers</title>
+</head>
+
+<body>
+    <div id="content">
+        <h1>All Eyes On You</h1>
+        <i>Sorry if you got here via QR code. it was to prove a point...</i>
+        <!-- Purpose -->
+        <h2>Purpose</h2>
+        <div id="purpose">
+            <p>This website is an exercise in privacy violations. Read on to see some
+                extremely simple examples of data harvesting for your viewing displeasure.</p><br>
+            <p>Corporations and other malefactors will try to rack you by any means necessary.
+                <br>Do not let them succeed.
+            </p>
+        </div>
+        <hr>
+
+        <!-- IP Addres + Location -->
+        <h2>IP Address</h2>
+        <div id="ip">
+            <p>Devices identify themselves on the internet using <a href="https://en.wikipedia.org/wiki/IP_address"
+                    target="_blang">IP Addresses</a>.
+                Yours is currently <i id="ip-address"></i>.</p><br>
+            <p>This identifier can be used to gather a plethora of data surrounding your usage habits.
+                Corporations can use it to link your profile to other accounts seen at this IP for advertisements,
+                and bad actors can use it to <a href="https://en.wikipedia.org/wiki/Doxing" target="_blank">doxx</a>
+                you.</p><br>
+            <p>Below is a single (free) query to a website that can tell what city you're in:</p>
+        </div>
+        <div id="location">
+            <h3>Time zone</h3>
+            <p id="time-zone"></p>
+            <h3>City</h3>
+            <p id="text-location"></p>
+            <div id="osm-map"></div>
+        </div>
+        <hr>
+
+        <!-- Cookies -->
+        <h2>Cookies</h2>
+        <div id="cookies">
+            <p>Cookies are a way for websites to store data for later visits.
+                This can make users' experiences with sites much more convenient. 
+                <br>(e.g. "Remember me" when logging in). 
+            </p><br>
+            <p>However, convenience and security are often antithetical.
+                While most websites claim to only use "experience-enhancing" cookies,
+                they often store advertising data to track you across sites, 
+                with or <i>without</i> your consent.</p><br>
+            <div class="interactive">
+                <p id="cookie-bamboozler"></p>
+            </div><br>
+            <p>If you'd like to verify this more rigorously, add a secret passphrase below and reload the page:</p>
+            <input type="text" id="cookie-input"><br>
+            <div class="interactive">
+                <p id="passphrase"></p>
+            </div>
+            <button id="clear-cookies">Ewww, get 'em off me!</button>
+        </div>
+
+        <!-- Scripts -->
+        <script src="ipinfo.js"></script>
+         <script src="cookies.js"></script>
+    </div>
+</body>
+
+</html>
