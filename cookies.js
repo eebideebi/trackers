@@ -64,6 +64,7 @@ function main() {
         removeCookie('passphrase');
     } else {
         passphraseElement.parentElement.style.visibility = 'hidden';
+        passphraseElement.parentElement.style.height = '0px';
     }
 
     cookieInput.addEventListener('keypress', (e) => {

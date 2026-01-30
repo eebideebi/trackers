@@ -1,5 +1,5 @@
 <html>
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,8 +36,13 @@
             <p>This identifier can be used to gather a plethora of data surrounding your usage habits.
                 Corporations can use it to link your profile to other accounts seen at this IP for advertisements,
                 and bad actors can use it to <a href="https://en.wikipedia.org/wiki/Doxing" target="_blank">doxx</a>
-                you.</p><br>
-            <p>Below is a single (free) query to a website that can tell what city you're in:</p>
+                you.<br><br>
+                <b><a href="https://en.wikipedia.org/wiki/Virtual_private_network" target="_blank">VPN</a>s hide
+                    your IP. They should be used whenever possible.</b>
+                <br><i>Alternatively, try the <a href="https://en.wikipedia.org/wiki/Tor_(network)" target="_blank">Tor
+                        network</a>.</i>
+            </p><br>
+            <p>Below is the result of a single (free) query to a website that can tell what city you're in:</p>
         </div>
         <div id="location">
             <h3>Time zone</h3>
@@ -51,14 +56,17 @@
         <!-- Cookies -->
         <h2>Cookies</h2>
         <div id="cookies">
-            <p>Cookies are a way for websites to store data for later visits.
-                This can make users' experiences with sites much more convenient. 
-                <br>(e.g. "Remember me" when logging in). 
+            <p><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">Cookies</a> are a way for websites to
+                store data for later visits.
+                This can make users' experiences with sites much more convenient.
+                <br>(e.g. "Remember me" when logging in).
             </p><br>
             <p>However, convenience and security are often antithetical.
                 While most websites claim to only use experience-enhancing cookies,
                 they frequently store advertising data to track you across sites,
-                with or <i>without</i> your consent.</p>
+                with or <i>without</i> your consent.</p><br>
+            <p><b>If possible, choose a browser which allows you to block 3rd-party cookies (e.g. Brave, Mullvad
+                    Browser).</b></p>
             <div class="interactive">
                 <div class="spiders" id="bamboozler-wrappper">
                     <p id="cookie-bamboozler"></p>
@@ -72,17 +80,19 @@
             </div>
         </div>
         <hr>
-        
+
         <!-- Query Parameters -->
         <h2>Query Parameters</h2>
         <div id="query-params">
-            <p>Query Parameters (a.k.a. <a href="https://en.wikipedia.org/wiki/Query_string" target="_blank">Query Strings</a>)
+            <p>Query Parameters (a.k.a. <a href="https://en.wikipedia.org/wiki/Query_string" target="_blank">Query
+                    Strings</a>)
                 are the list of variales past the <span class="code">?</span> in a URL:</p><br>
             <div id="url-example">
                 <p><span class="code">http://example.com?</span><span
                         class="query-params">parameter1=value1&amp;parameter2=value2</span></p><br>
             </div>
-            <p>URL parameters allow websites to store data when a link is shared. This can be useful for services designed to be
+            <p>URL parameters allow websites to store data when a link is shared. This can be useful for services
+                designed to be
                 shared, like
                 <a href="https://duckduckgo.com/?q=Open+Source" target="_blank">DuckDuckGo<a>
             </p><br>
@@ -98,9 +108,16 @@
 
         <!-- Scripts -->
         <script src="ipinfo.js"></script>
-         <script src="cookies.js"></script>
+        <script src="cookies.js"></script>
         <script src="urlparams.js"></script>
     </div>
+    <footer>
+        <div style="margin-top: 50px;">
+            <hr>
+            <a href="https://github.com/eebideebi/trackers" target="_blank">Source code ↗</a>
+            <div style="margin-bottom: 25px;"></div>
+        </div>
+    </footer>
 </body>
 
 </html>
