@@ -6,8 +6,7 @@ async function getIP() {
             console.error(err);
             return undefined;
         });
-    console.log(response);
-    return response
+    return response;
 }
 
 async function main() {
@@ -31,7 +30,6 @@ async function main() {
 
     // Location (map):
     const mapElement = document.querySelector('#osm-map');
-    console.log(mapElement)
 
     const map = L.map(mapElement);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {

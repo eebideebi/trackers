@@ -1,5 +1,5 @@
 <html>
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,10 @@
 <body>
     <div id="content">
         <h1>All Eyes On You</h1>
-        <i>Sorry if you got here via QR code. it was to prove a point...</i>
+        <!-- <i>Sorry if you got here via QR code. it was to prove a point...</i> -->
+        <div class="interactive">
+            <p id="sender-param"></p>
+        </div>
         <!-- Purpose -->
         <h2>Purpose</h2>
         <div id="purpose">
@@ -28,8 +31,8 @@
         <h2>IP Address</h2>
         <div id="ip">
             <p>Devices identify themselves on the internet using <a href="https://en.wikipedia.org/wiki/IP_address"
-                    target="_blang">IP Addresses</a>.
-                Yours is currently <i id="ip-address"></i>.</p><br>
+                    target="_blank">IP Addresses</a>.
+                Yours is currently <span id="ip-address" class="code"></span>.</p><br>
             <p>This identifier can be used to gather a plethora of data surrounding your usage habits.
                 Corporations can use it to link your profile to other accounts seen at this IP for advertisements,
                 and bad actors can use it to <a href="https://en.wikipedia.org/wiki/Doxing" target="_blank">doxx</a>
@@ -53,23 +56,50 @@
                 <br>(e.g. "Remember me" when logging in). 
             </p><br>
             <p>However, convenience and security are often antithetical.
-                While most websites claim to only use "experience-enhancing" cookies,
-                they often store advertising data to track you across sites, 
-                with or <i>without</i> your consent.</p><br>
+                While most websites claim to only use experience-enhancing cookies,
+                they frequently store advertising data to track you across sites,
+                with or <i>without</i> your consent.</p>
             <div class="interactive">
-                <p id="cookie-bamboozler"></p>
-            </div><br>
+                <div class="spiders" id="bamboozler-wrappper">
+                    <p id="cookie-bamboozler"></p>
+                </div>
+            </div>
+            <button id="clear-cookies">Ewww, get 'em off me!</button>
             <p>If you'd like to verify this more rigorously, add a secret passphrase below and reload the page:</p>
             <input type="text" id="cookie-input"><br>
             <div class="interactive">
                 <p id="passphrase"></p>
             </div>
-            <button id="clear-cookies">Ewww, get 'em off me!</button>
+        </div>
+        <hr>
+        
+        <!-- Query Parameters -->
+        <h2>Query Parameters</h2>
+        <div id="query-params">
+            <p>Query Parameters (a.k.a. <a href="https://en.wikipedia.org/wiki/Query_string" target="_blank">Query Strings</a>)
+                are the list of variales past the <span class="code">?</span> in a URL:</p><br>
+            <div id="url-example">
+                <p><span class="code">http://example.com?</span><span
+                        class="query-params">parameter1=value1&amp;parameter2=value2</span></p><br>
+            </div>
+            <p>URL parameters allow websites to store data when a link is shared. This can be useful for services designed to be
+                shared, like
+                <a href="https://duckduckgo.com/?q=Open+Source" target="_blank">DuckDuckGo<a>
+            </p><br>
+            <p>However, these query parameters can also be used to link you to the person whom you shared a website.</p>
+            <p>If you don't trust a URL's query parameters, delete them before sharing the URL.</p><br>
+            <p>As an example, enter a username, copy the link below, and
+                open it in a new tab. Your username will be at the top.</p>
+            <input type="text" id="param-input">
+            <div style="margin: 10px auto;">
+                <span class="code" id="param-output"></span>
+            </div>
         </div>
 
         <!-- Scripts -->
         <script src="ipinfo.js"></script>
          <script src="cookies.js"></script>
+        <script src="urlparams.js"></script>
     </div>
 </body>
 

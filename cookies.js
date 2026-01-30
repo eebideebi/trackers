@@ -18,6 +18,10 @@ function clearCookies() {
     console.log('Removing', cookie);
     removeCookie(cookie);
   }
+
+  const bamboozler = document.querySelector('#cookie-bamboozler');
+  bamboozler.parentElement.classList.remove('spiders');
+  
 }
 
 function getCookie(cname) {
@@ -43,11 +47,13 @@ function main() {
     const bamboozler = document.querySelector('#cookie-bamboozler');
     setCookie('lastAccess', (new Date()).toLocaleString());
     if (lastAccess) {
-        bamboozler.textContent = `Last time you were here, I secretly stashed a cookie on you (sorry).
+        bamboozler.textContent = `Last time you were here, I secretly put a cookie on you 
+                        to show how easy it is to do so without consent (sorry).
                         It's the last time you visited this site: ${lastAccess} UTC`
     } else {
-        bamboozler.parentElement.style.visibility = 'hidden';
+        bamboozler.parentElement.parentElement.style.visibility = 'hidden';
     }
+
     // Extra cookie validation
     const passphraseElement = document.querySelector('#passphrase');
     const cookieInput = document.querySelector('#cookie-input');
@@ -59,17 +65,24 @@ function main() {
     } else {
         passphraseElement.parentElement.style.visibility = 'hidden';
     }
+
     cookieInput.addEventListener('keypress', (e) => {
-        const c = cookieInput.value;
+        const c = e.target.value + (e.key == "Enter" ? "" : e.key);
         setCookie('passphrase',c);
     });
 
-    document.querySelector('#clear-cookies').addEventListener('click',() => {
-        clearCookies();
-        alert('Cookies cleared')
-    });
+    // Clearing cookies:
+    const cookieButton = document.querySelector('#clear-cookies');
+    if (passphrase || lastAccess) {
+        cookieButton.addEventListener('click',() => {
+            clearCookies();
+            alert('Cookies cleared');
+            cookieButton.style.visibility = 'hidden';
+            cookieButton.style.height = '0px';
+        });
+    } else {
+        cookieButton.style.visibility = 'hidden';
+    }
 }
-
-
 
 document.addEventListener('DOMContentLoaded', main);

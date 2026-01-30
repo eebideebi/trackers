@@ -1,0 +1,3 @@
+
+
+const agent = navigator.userAgent;

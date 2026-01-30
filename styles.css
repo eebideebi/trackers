@@ -11,7 +11,8 @@ p {
     text-align: center;
     width: 90%;
     text-wrap: inherit;
-    margin: auto
+    margin: auto;
+    opacity: 100%;
 }
 
 hr {
@@ -19,10 +20,23 @@ hr {
     margin: 25px auto;
 }
 
-#ip-address {
-    background-color: rgba(131, 131, 131, 0.171);
+.code {
+    background-color: rgb(235, 235, 235);
     padding: 3px;
     border-radius: 5px;
+}
+
+.query-params {
+    background-color: rgba(245, 194, 54, 0.637);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.spiders {
+    background-image: url("spiders.gif");
+    background-size: 15%;
+    padding: 10px;
+    margin: -10px;
 }
 
 #osm-map {
@@ -32,15 +46,22 @@ hr {
 }
 
 .interactive {
+    opacity: 100%;
     background-color: burlywood;
     width: 90%;
     padding: 10px;
     border-radius: 7px;
-    margin: auto;
+    margin: 10px auto;
+    overflow: hidden;
 }
 
 button {
     padding: 5px;
+    margin: 5px auto;
     font-size: 16;
     font-family: 'Lucida Console', monospace;
+}
+
+input {
+    margin: 10px;
 }
