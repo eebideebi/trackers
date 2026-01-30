@@ -22,8 +22,7 @@ function writeShareableUrl(event) {
 
     const sketchParams = new URLSearchParams(window.location.search);
     sketchParams.set('src', encode(input));
-    const url = window.location.origin + '?' + sketchParams.toString();
-
+    const url = window.location.href.split('?')[0] + '?' + sketchParams.toString();
     document.querySelector('#param-output').textContent = url;
 }
 
