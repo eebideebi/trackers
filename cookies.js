@@ -59,7 +59,7 @@ function main() {
     const cookieInput = document.querySelector('#cookie-input');
     const passphrase = getCookie('passphrase');
     if (passphrase) {
-        passphraseElement.textContent = `Your passphrase is: ${passphrase}`;
+        passphraseElement.innerHTML = `Your passphrase is: <span class=\"code\">${passphrase}</span>`;
         cookieInput.style.visibility = 'hidden';
         removeCookie('passphrase');
     } else {

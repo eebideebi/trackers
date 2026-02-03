@@ -53,8 +53,9 @@ function eyeTimeout (i) {
     setTimeout(() => eyeTimeout(i-1), 25);
 }
 
-eyeTimeout(50)
+eyeTimeout(75)
 
 
-var ticks = 300,ticker;
-setTimeout(function() { ticker = setInterval(changeTick,1600);},500);
+//! TEMP: Need to ensure proper CSS
+// var ticks = 300,ticker;
+// setTimeout(function() { ticker = setInterval(changeTick,1600);},500);

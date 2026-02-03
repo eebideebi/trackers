@@ -1,3 +1,9 @@
 // Next step: showcase browser-query harvesting
 
-const agent = navigator.userAgent;
+
+function main() {
+    const agent = navigator.userAgent;
+    
+}
+
+main();
