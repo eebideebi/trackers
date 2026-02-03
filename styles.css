@@ -1,7 +1,78 @@
 html {
     font-family: 'Lucida Console', monospace;
+    color: white;
+    background-color: #121212;
 }
 
+#content {
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.eyes-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.eye {
+    margin: 10px;
+    width: 80px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 100%;
+    position: relative;
+    background: radial-gradient(circle at 50%, #fcfcfc, #efeff1 66%, #eecccc 100%);
+}
+
+#lid {
+    animation: blink 2.4s infinite;
+    animation-delay: 8s;
+    top: -50px;
+    border-bottom: 5px inset #a8a8a8;
+}
+
+.pupil {
+    position: absolute;
+    width: 50%;
+    height: 30px;
+    border-radius: 100%;
+    background: radial-gradient(circle at 50% 50%, #066 0%, #6cc 90%);
+    top: 0px;
+    left: 0px;
+
+}
+
+.pupil:before {
+    content: "";
+    width: 40%;
+    height: 40%;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: black;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes blink {
+    90% {
+        transform: none;
+        animation-timing-function: ease-in;
+    }
+
+    93% {
+        transform: translateY(15px) scaleY(0)
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+    }
+}
 
 div {
     text-align: center;
@@ -21,13 +92,13 @@ hr {
 }
 
 .code {
-    background-color: rgb(235, 235, 235);
+    background-color: #3f3f3f;
     padding: 3px;
     border-radius: 5px;
 }
 
 .query-params {
-    background-color: rgba(245, 194, 54, 0.637);
+    background-color: #2d6683;
     padding: 3px;
     border-radius: 5px;
 }
@@ -47,7 +118,7 @@ hr {
 
 .interactive {
     opacity: 100%;
-    background-color: burlywood;
+    background-color: #477690;
     width: 90%;
     padding: 10px;
     border-radius: 7px;
@@ -64,6 +135,114 @@ button {
 
 input {
     margin: 10px;
-    border: 2px solid black;
+    border: 2px solid #9a9a9a;
     border-radius: 5px;
+    background-color: #8b8b8b;
+}
+
+a {
+    color: lime;
+}
+
+
+.mini-eye {
+    width: 50px;
+    height: 0px;
+    position: absolute;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 50%;
+    animation-name: eyelid;
+    animation-duration: 15s;
+    animation-timing-function: cubic-bezier();
+    animation-iteration-count: infinite;
+    z-index: -1;
+    opacity: 75%;
+}
+
+.mini-pupil {
+    position: relative;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    border-radius: 50%;
+    animation-name: dart;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dart {
+
+    5%,
+    7% {
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+    }
+
+    9%,
+    13% {
+        top: calc(50% - 15px);
+        left: calc(25% - 15px);
+    }
+
+    17%,
+    21% {
+        top: calc(50% - 15px);
+        left: calc(75% - 15px);
+        width: 30px;
+        height: 30px;
+    }
+
+    25%,
+    35% {
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+    }
+
+    100% {
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@keyframes eyelid {
+    0% {
+        height: 0px;
+        opacity: 0%;
+    }
+
+    5% {
+        height: 0px;
+        opacity: 75%;
+    }
+
+    6% {
+        height: 50px;
+        transform: translateY(-50%);
+    }
+
+    45% {
+        height: 50px;
+        transform: translateY(-50%);
+        opacity: 75%;
+    }
+
+    46% {
+        transform: translateY(-50%);
+        height: 0px;
+        opacity: 75%;
+    }
+    47% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 0%;
+        height: 0%;    }
 }
